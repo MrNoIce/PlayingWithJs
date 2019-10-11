@@ -27,7 +27,7 @@ let bigNums = [1,6,10,234,9,3]
 let whatIExpected = bigNums.sort( (current, next) => {
   return current - next
 })
-
+console.log(whatIExpected, "What I expected")
 var people = [
   {
     name: "Fred",
@@ -197,3 +197,113 @@ let dataArr = [
 let overcrowding = dataArr.reduce( (curr, next) => {
   return curr + next.pop
 }, 0)
+
+
+//factorialize numbers
+function factorialize(num){
+  for (var i=1; i<num; i++){
+    console.log("factorialize",i)
+  }
+}
+factorialize(6)
+factorialize(9)
+
+
+//find longest string (long way);
+function findLongestWord(str){
+ let words = str.split(" ");
+ let longest = "";
+ for (let word of words){
+   if (word.length > longest.length) longest = word;
+  // console.log(word)
+  }
+  console.log(longest.length);
+}
+
+//find longest string short way
+function findLongestWordShort(str){
+  return str.split(" ").sort(function(a,b){console.log( b.length - a.length)})
+}
+
+findLongestWordShort("terry", "salliest", "sam")
+
+findLongestWord("When it rains I feel happy")
+
+let words = ["sampson", "time", "lime", "rhemmy", "terrisouch"]
+
+//indexing the place of the words in this 4loop
+for (var i=0; i<words.length; i++){
+  console.log(words[i])
+}
+//jumps straight to the word list and interates through it with out worry about indexing
+for (let word of words){
+  console.log(word)
+}
+
+//making all word in a sentence a capital first letter
+function titleCase(str) {
+  let words = str.toLowerCase().split(" ");
+  for (let i=0; i<words.length; i++){
+    words[i] = words[i][0].toUpperCase() + words[i].slice(1);
+  }
+  return words.join(" ");
+}
+console.log(titleCase("I saw this whole world"));
+
+//finding largest number in an array of array of numbers
+function largestFour(arr){
+  let maxes = [];
+  for (let i=0; i<arr.length; i++){
+    let tempMax = arr[i][0];
+    for (let j=0; j<arr[i].length; j++){
+      let currentElement = arr[i][j];
+      if (currentElement >= tempMax){
+        tempMax = currentElement;
+      }
+    }
+    maxes.push(tempMax);
+  }
+  return maxes;
+}
+console.log("largest",largestFour([[4,22,55,6],[33,66,24,456],[23,77,2,5],[4,77,3645,345]]))
+
+//confirm ending in string--short version
+function confirmEnding(str, target){
+  return str.endsWith(target);
+}
+console.log(confirmEnding("Tennessee", "e"))
+
+
+function fizzBuss(num4){
+  for(let i = 1; i<=num4; i++){
+    if ( i % 3 === 0 && i % 5 === 0){
+      console.log("FizBuz");
+    }
+    if ( i % 3 === 0){
+      console.log("fizz");
+    }
+    if ( i % 5 === 0){
+      console.log("Buzz");
+    }
+    else{
+      console.log("the rest are", [i]);
+    }
+  }
+}
+let num1 = 100
+
+fizzBuss(num1)
+
+for (var i=1; i <= 20; i++)
+{
+    if (i % 15 == 0)
+        console.log("FizzBuzz");
+    else if (i % 3 == 0)
+        console.log("Fizz");
+    else if (i % 5 == 0)
+        console.log("Buzz");
+    else
+        console.log(i);
+}
+
+//reversing a string
