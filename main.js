@@ -307,3 +307,20 @@ for (var i=1; i <= 20; i++)
 }
 
 //reversing a string
+
+
+
+//      11/15/19
+
+//Adding all values in an array
+function addingArray(arr){
+  sumEm = 0;
+  for(i=0;i<arr.length;i++){
+    sumEm += arr[i];
+  }
+  return sumEm;
+}
+
+arrayz = [2,4,3,23,55]
+
+console.log("the new challange", addingArray(arrayz))
